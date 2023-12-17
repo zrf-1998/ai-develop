@@ -20,3 +20,5 @@ def ai():
 
 if __name__ == '__main__':
     app.run(port=8989)
+    
+# 测试命令行curl -X POST -H "Content-Type: application/json" -d '{"question":"where is the capital if China?"}' http://127.0.0.1:8989/api/ai

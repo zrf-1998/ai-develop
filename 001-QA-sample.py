@@ -1,6 +1,5 @@
 import openai
 import os
-import constants
 import getpass
 from pathlib import Path
 import time

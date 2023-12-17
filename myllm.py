@@ -3,13 +3,12 @@ from langchain.chat_models import ChatOpenAI
 from langchain.embeddings.openai import OpenAIEmbeddings
 from openai.embeddings_utils import get_embedding
 import openai
+from dotenv import load_dotenv
 import os
-import constants
+load_dotenv()
 
-os.environ["OPENAI_API_KEY"] = constants.OPENAI_API_KEY
-os.environ["OPENAI_API_BASE"] = constants.OPENAI_API_BASE_URL
-openai.api_key = constants.OPENAI_API_KEY
-openai.api_base = constants.OPENAI_API_BASE_URL
+openai.api_key = os.environ.get("OPENAI_API_KEY")
+openai.api_base = os.environ.get("OPENAI_API_BASE_URL")
 
 myllm = OpenAI()
 mychat = ChatOpenAI()

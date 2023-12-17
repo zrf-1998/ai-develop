@@ -1,10 +1,12 @@
 import openai
-import constants
 import os
 import json
 
-openai.api_key = constants.OPENAI_API_KEY
-openai.api_base = constants.OPENAI_API_BASE_URL
+from dotenv import load_dotenv
+load_dotenv()
+
+openai.api_key = os.environ.get("OPENAI_API_KEY")
+openai.api_base = os.environ.get("OPENAI_API_BASE_URL")
 
 # define a function calling
 def get_toy_info(toy_name: str):
